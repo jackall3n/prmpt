@@ -1,6 +1,7 @@
 {
-  "name": "@prmpt/dev",
+  "name": "@tsprompt/dev",
   "version": "0.0.1",
+  "access": "public",
   "type": "module",
   "exports": {
     ".": {
@@ -15,7 +16,7 @@
     "release": "bun publish --allow-empty"
   },
   "dependencies": {
-    "@prmpt/core": "workspace:*",
+    "@tsprompt/core": "workspace:*",
     "handlebars": "^4",
     "liquidjs": "^10"
   }

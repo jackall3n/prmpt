@@ -5,7 +5,7 @@ const result = await build({
   outdir: "./dist",
   target: "node",
   external: [
-    "@prmpt/core",
+    "@tsprompt/core",
     "handlebars",
     "liquidjs",
     "zod",

@@ -4,7 +4,7 @@ const result = await build({
   entrypoints: ["./src/cli.ts"],
   outdir: "./dist",
   target: "node",
-  external: ["@prmpt/core", "@prmpt/dev"],
+  external: ["@tsprompt/core", "@tsprompt/dev"],
   naming: {
     entry: "prmpt",
   },
@@ -15,4 +15,4 @@ if (!result.success) {
   process.exit(1);
 }
 
-console.log("✓ prmpt CLI built successfully");
+console.log("✓ tsprompt CLI (prmpt binary) built successfully");

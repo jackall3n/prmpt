@@ -6,23 +6,23 @@
       "name": "prmpt-monorepo",
       "devDependencies": {
         "@biomejs/biome": "^2.4.4",
+        "@tsprompt/core": "workspace:*",
         "@types/bun": "latest",
         "bumpp": "^10.4.1",
-        "prmpt": "workspace:*",
         "turbo": "^2.8.11",
         "typescript": "^5",
       },
     },
     "examples": {
-      "name": "@prmpt/example",
+      "name": "@tsprompt/example",
       "version": "0.0.1",
       "dependencies": {
+        "@tsprompt/cli": "workspace:*",
         "handlebars": "^4",
-        "prmpt": "workspace:*",
       },
     },
     "packages/core": {
-      "name": "@prmpt/core",
+      "name": "@tsprompt/core",
       "version": "0.0.1",
       "dependencies": {
         "es-toolkit": "^1.44.0",
@@ -44,23 +44,23 @@
       ],
     },
     "packages/dev": {
-      "name": "@prmpt/dev",
+      "name": "@tsprompt/dev",
       "version": "0.0.1",
       "dependencies": {
-        "@prmpt/core": "workspace:*",
+        "@tsprompt/core": "workspace:*",
         "handlebars": "^4",
         "liquidjs": "^10",
       },
     },
     "packages/prmpt": {
-      "name": "prmpt",
+      "name": "@tsprompt/cli",
       "version": "0.0.1",
       "bin": {
         "prmpt": "./src/cli.ts",
       },
       "dependencies": {
-        "@prmpt/core": "workspace:*",
-        "@prmpt/dev": "workspace:*",
+        "@tsprompt/core": "workspace:*",
+        "@tsprompt/dev": "workspace:*",
       },
     },
   },
@@ -87,11 +87,13 @@
 
     "@jsdevtools/ono": ["@jsdevtools/ono@7.1.3", "", {}, "sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg=="],
 
-    "@prmpt/core": ["@prmpt/core@workspace:packages/core"],
+    "@tsprompt/cli": ["@tsprompt/cli@workspace:packages/prmpt"],
 
-    "@prmpt/dev": ["@prmpt/dev@workspace:packages/dev"],
+    "@tsprompt/core": ["@tsprompt/core@workspace:packages/core"],
 
-    "@prmpt/example": ["@prmpt/example@workspace:examples"],
+    "@tsprompt/dev": ["@tsprompt/dev@workspace:packages/dev"],
+
+    "@tsprompt/example": ["@tsprompt/example@workspace:examples"],
 
     "@types/bun": ["@types/bun@1.3.9", "", { "dependencies": { "bun-types": "1.3.9" } }, "sha512-KQ571yULOdWJiMH+RIWIOZ7B2RXQGpL1YQrBtLIV3FqDcCu6FsbFUBwhdKUlCKUpS3PJDsHlJ1QKlpxoVR+xtw=="],
 
@@ -204,8 +206,6 @@
     "pkg-types": ["pkg-types@2.3.0", "", { "dependencies": { "confbox": "^0.2.2", "exsolve": "^1.0.7", "pathe": "^2.0.3" } }, "sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig=="],
 
     "prettier": ["prettier@3.8.1", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg=="],
-
-    "prmpt": ["prmpt@workspace:packages/prmpt"],
 
     "rc9": ["rc9@2.1.2", "", { "dependencies": { "defu": "^6.1.4", "destr": "^2.0.3" } }, "sha512-btXCnMmRIBINM2LDZoEmOogIZU7Qe7zn4BpomSKZ/ykbLObuBdvG+mFq11DL6fjH1DRwHhrlgtYWG96bJiC7Cg=="],
 

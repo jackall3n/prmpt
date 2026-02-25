@@ -1,6 +1,7 @@
 {
-  "name": "prmpt",
+  "name": "@tsprompt/cli",
   "version": "0.0.1",
+  "access": "public",
   "type": "module",
   "bin": {
     "prmpt": "./src/cli.ts"
@@ -18,7 +19,7 @@
     "release": "bun publish --allow-empty"
   },
   "dependencies": {
-    "@prmpt/core": "workspace:*",
-    "@prmpt/dev": "workspace:*"
+    "@tsprompt/core": "workspace:*",
+    "@tsprompt/dev": "workspace:*"
   }
 }

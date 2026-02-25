@@ -1,5 +1,5 @@
 {
-  "name": "@prmpt/example",
+  "name": "@tsprompt/example",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -9,7 +9,7 @@
     "generate": "prmpt build && bun run use.ts"
   },
   "dependencies": {
-    "prmpt": "workspace:*",
+    "@tsprompt/cli": "workspace:*",
     "handlebars": "^4"
   }
 }

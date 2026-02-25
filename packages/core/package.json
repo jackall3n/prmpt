@@ -1,6 +1,7 @@
 {
-  "name": "@prmpt/core",
+  "name": "@tsprompt/core",
   "version": "0.0.1",
+  "access": "public",
   "type": "module",
   "exports": {
     ".": {

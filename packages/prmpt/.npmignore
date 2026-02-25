@@ -1,0 +1,37 @@
+# Source files
+src/
+
+# Tests
+*.test.ts
+*.spec.ts
+
+# Configuration
+tsconfig.json
+build.ts
+biome.json
+.biome.json
+
+# Development
+node_modules/
+.env
+.env.local
+
+# Git
+.git/
+.gitignore
+.github/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Turbo
+.turbo/
+
+# Misc
+.DS_Store
+npm-debug.log
+yarn-error.log

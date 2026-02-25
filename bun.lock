@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "prmpt-monorepo",
+      "name": "tsprompt-monorepo",
       "devDependencies": {
         "@biomejs/biome": "^2.4.4",
         "@tsprompt/core": "workspace:*",
@@ -15,7 +15,7 @@
     },
     "examples": {
       "name": "@tsprompt/example",
-      "version": "0.0.1",
+      "version": "0.3.0",
       "dependencies": {
         "@tsprompt/cli": "workspace:*",
         "handlebars": "^4",
@@ -23,7 +23,7 @@
     },
     "packages/core": {
       "name": "@tsprompt/core",
-      "version": "0.0.1",
+      "version": "0.3.0",
       "dependencies": {
         "es-toolkit": "^1.44.0",
         "glob": "^13.0.6",
@@ -45,7 +45,7 @@
     },
     "packages/dev": {
       "name": "@tsprompt/dev",
-      "version": "0.0.1",
+      "version": "0.3.0",
       "dependencies": {
         "@tsprompt/core": "workspace:*",
         "handlebars": "^4",
@@ -54,7 +54,7 @@
     },
     "packages/prmpt": {
       "name": "@tsprompt/cli",
-      "version": "0.0.1",
+      "version": "0.3.0",
       "bin": {
         "prmpt": "./src/cli.ts",
       },
@@ -179,7 +179,7 @@
 
     "lru-cache": ["lru-cache@11.2.6", "", {}, "sha512-ESL2CrkS/2wTPfuend7Zhkzo2u0daGJ/A2VucJOgQ/C48S/zB8MMeMHSGKYpXhIjbPxfuezITkaBH1wqv00DDQ=="],
 
-    "minimatch": ["minimatch@10.2.3", "", { "dependencies": { "brace-expansion": "^5.0.2" } }, "sha512-Rwi3pnapEqirPSbWbrZaa6N3nmqq4Xer/2XooiOKyV3q12ML06f7MOuc5DVH8ONZIFhwIYQ3yzPH4nt7iWHaTg=="],
+    "minimatch": ["minimatch@10.2.4", "", { "dependencies": { "brace-expansion": "^5.0.2" } }, "sha512-oRjTw/97aTBN0RHbYCdtF1MQfvusSIBQM0IZEgzl6426+8jSC0nF1a/GmnVLpfB9yyr6g6FTqWqiZVbxrtaCIg=="],
 
     "minimist": ["minimist@1.2.8", "", {}, "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA=="],
 

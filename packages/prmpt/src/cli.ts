@@ -47,7 +47,7 @@ async function main() {
     process.exit(0);
   }
 
-  const { loadConfig } = await import("@prmpt/core");
+  const { loadConfig } = await import("@tsprompt/core");
   const config = await loadConfig();
 
   // CLI flags override config values
@@ -56,7 +56,7 @@ async function main() {
 
   switch (command) {
     case "build": {
-      const { build } = await import("@prmpt/core");
+      const { build } = await import("@tsprompt/core");
 
       console.log(`\n  prmpt build\n`);
       console.log(`  engine: ${config.engine}`);
@@ -75,7 +75,7 @@ async function main() {
     }
 
     case "dev": {
-      const { dev } = await import("@prmpt/dev");
+      const { dev } = await import("@tsprompt/dev");
       const port = Number(flag("port") ?? flag("p") ?? "3000");
       console.log(`\n  prmpt dev\n`);
       console.log(`  engine: ${config.engine}`);

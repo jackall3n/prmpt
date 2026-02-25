@@ -5,6 +5,6 @@ export {
   findPrompts,
   generateContent,
   loadConfig,
-} from "@prmpt/core";
+} from "@tsprompt/core";
 
-export type { Engine } from "@prmpt/core";
+export type { Engine } from "@tsprompt/core";

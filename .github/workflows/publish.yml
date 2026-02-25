@@ -1,45 +1,38 @@
-name: Publish
+name: Publish Packages
 
 on:
   push:
     tags:
-      - "v*"
-
-permissions:
-  contents: write
-  id-token: write
+      - 'v*'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
 
-      - run: bun install --frozen-lockfile
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
 
-      - name: Type check
-        run: bunx tsc --noEmit
+      - name: Build packages
+        run: bun run build
 
-      - name: Test
+      - name: Run tests
         run: bun test
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org
-
       - name: Publish to npm
-        run: npm publish --provenance --access public
+        run: |
+          cd packages/core && bun publish --allow-empty
+          cd ../prmpt && bun publish --allow-empty
+          cd ../dev && bun publish --allow-empty
         env:
+          npm_config_registry: 'https://registry.npmjs.org/'
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          generate_release_notes: true

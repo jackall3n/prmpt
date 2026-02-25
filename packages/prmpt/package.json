@@ -12,8 +12,11 @@
     }
   },
   "scripts": {
-    "build": "bun build ./src/cli.ts --outdir ./dist --target node --entry-naming prmpt",
-    "test": "bun test"
+    "build": "bun build.ts",
+    "test": "bun test",
+    "lint": "tsc --noEmit",
+    "dev": "echo 'CLI package - no dev server'",
+    "release": "bun publish --allow-empty"
   },
   "dependencies": {
     "@prmpt/core": "workspace:*",

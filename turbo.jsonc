@@ -1,0 +1,75 @@
+// Turborepo configuration for prmpt monorepo
+// See https://turborepo.dev/docs/reference/configuration for documentation
+{
+  "$schema": "https://turbo.build/schema.json",
+
+  // Global environment variables that affect all task hashes
+  // When these files change, all caches are invalidated
+  "globalDependencies": [
+    "tsconfig.json",
+    "package.json",
+    "turbo.jsonc",
+    ".gitignore"
+  ],
+
+  // Environment variables to pass through to tasks
+  // Useful for CI/CD secrets and registry configuration
+  "globalPassThroughEnv": [
+    "NODE_AUTH_TOKEN",
+    "npm_config_registry"
+  ],
+
+  // Task definitions and their dependency graph
+  "tasks": {
+    // Build task: Produces compiled output
+    "build": {
+      "description": "Build package from source",
+      "outputs": ["dist/**", "src/generated/**"],
+      "cache": true,
+      "inputs": ["src/**/*.ts", "package.json", "tsconfig.json"],
+      // Empty dependsOn means no cross-package dependencies
+      // Each package builds independently
+      "dependsOn": []
+    },
+
+    // Test task: Verification, no output caching needed
+    "test": {
+      "description": "Run unit tests",
+      "outputs": [],
+      "cache": false,
+      // Tests should always run (no cache)
+      "inputs": ["src/**", "package.json", "bun.lockb"]
+    },
+
+    // Lint task: Type checking and validation
+    "lint": {
+      "description": "Type-check and lint code",
+      "outputs": [],
+      "cache": true,
+      "inputs": ["src/**/*.ts", "tsconfig.json"],
+      "dependsOn": []
+    },
+
+    // Dev task: Local development server
+    "dev": {
+      "description": "Start development server",
+      "outputs": [],
+      "cache": false,
+      // Development should not be cached
+      "persistent": true,
+      // Keeps task running (doesn't exit)
+      "dependsOn": ["^build"]
+      // Wait for dependencies to build first
+    },
+
+    // Release task: Publishing packages
+    "release": {
+      "description": "Release and publish packages",
+      "outputs": [],
+      "cache": false,
+      // Release should never be cached
+      "dependsOn": ["^build", "^test", "^lint"]
+      // Wait for all checks to pass in dependencies
+    }
+  }
+}

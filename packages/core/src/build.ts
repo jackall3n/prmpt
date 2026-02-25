@@ -1,4 +1,4 @@
-import { Glob } from "bun";
+import { Glob } from "glob";
 import { join } from "node:path";
 import { generateContent, generateIndex } from "./codegen";
 import { validateConfig } from "./config";
@@ -6,9 +6,10 @@ import { parsePromptFile } from "./parser";
 import type { Config, Options } from "./schemas/config";
 
 export async function findPrompts(dir: string): Promise<string[]> {
-  const glob = new Glob("**/*.md");
+  const glob = new Glob("**/*.md", { cwd: dir, absolute: true });
   const files: string[] = [];
-  for await (const path of glob.scan({ cwd: dir, absolute: true })) {
+
+  for await (const path of glob) {
     files.push(path);
   }
   return files.sort();

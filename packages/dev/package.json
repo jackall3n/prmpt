@@ -9,8 +9,11 @@
     }
   },
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./dist --target node",
-    "test": "bun test"
+    "build": "bun build.ts",
+    "test": "bun test",
+    "lint": "tsc --noEmit",
+    "dev": "echo 'Dev package - no dev server'",
+    "release": "bun publish --allow-empty"
   },
   "dependencies": {
     "@prmpt/core": "workspace:*",

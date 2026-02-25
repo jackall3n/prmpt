@@ -1,20 +1,25 @@
 {
   "name": "root",
   "private": true,
+  "packageManager": "bun@1.3.9",
   "workspaces": [
     "packages/*",
     "examples"
   ],
   "scripts": {
-    "test": "bun test",
-    "lint": "bunx --bun tsc --noEmit",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "dev": "turbo run dev --parallel",
+    "release": "turbo run release",
     "version": "bumpp --recursive"
   },
   "devDependencies": {
-    "bumpp": "^10.4.1",
     "@biomejs/biome": "^2.4.4",
     "@types/bun": "latest",
+    "bumpp": "^10.4.1",
     "prmpt": "workspace:*",
+    "turbo": "^2.8.11",
     "typescript": "^5"
   }
 }

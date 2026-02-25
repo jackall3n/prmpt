@@ -1,5 +1,5 @@
-import type { Engine, ParsedPrompt } from "@prmpt/core";
-import { findPrompts, parsePromptFile } from "@prmpt/core";
+import type { Engine, ParsedPrompt } from "@tsprompt/core";
+import { findPrompts, parsePromptFile } from "@tsprompt/core";
 import Handlebars from "handlebars";
 import { Liquid } from "liquidjs";
 

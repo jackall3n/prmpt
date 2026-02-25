@@ -1,6 +1,6 @@
 import { resolve } from "node:path";
-import type { Engine } from "@prmpt/core";
-import { build } from "@prmpt/core";
+import type { Engine } from "@tsprompt/core";
+import { build } from "@tsprompt/core";
 import { notifyClients, startServer } from "./server";
 import { watchPrompts } from "./watcher";
 

@@ -49,7 +49,7 @@ Hello {{name}}, welcome to {{place}}!
 
         export async function render(args: TestArgs): Promise<string> {
             const Handlebars = await import("handlebars");
-            const template =  Handlebars.compile(source, { noEscape: true });
+            const template = Handlebars.compile(source, { noEscape: true });
             return template(args);
         }"
       `);

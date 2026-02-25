@@ -23,9 +23,9 @@ Hello {{name}}, welcome to {{place}}!
     const prompt = await parsePrompt(content, "example-prompt.md", config.engine);
 
     it("should generate content", async () => {
-      const content = generateContent(prompt)
+      const { output} = generateContent(prompt)
 
-      expect(content).toMatchInlineSnapshot(`
+      expect(output).toMatchInlineSnapshot(`
         "export interface TestArgs {
             name: string;
             place: string;

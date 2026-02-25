@@ -1,0 +1,15 @@
+{
+  "name": "@prmpt/example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "prmpt build",
+    "dev": "prmpt dev . --port 3001",
+    "generate": "prmpt build && bun run use.ts"
+  },
+  "dependencies": {
+    "prmpt": "workspace:*",
+    "handlebars": "^4"
+  }
+}

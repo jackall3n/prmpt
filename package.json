@@ -1,0 +1,18 @@
+{
+  "name": "prmpt-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "lint": "bunx --bun tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.4",
+    "@types/bun": "latest",
+    "prmpt": "workspace:*",
+    "typescript": "^5"
+  }
+}

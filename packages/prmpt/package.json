@@ -1,0 +1,22 @@
+{
+  "name": "prmpt",
+  "version": "0.0.1",
+  "type": "module",
+  "bin": {
+    "prmpt": "./src/cli.ts"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "bun build ./src/cli.ts --outdir ./dist --target node --entry-naming prmpt",
+    "test": "bun test"
+  },
+  "dependencies": {
+    "@prmpt/core": "workspace:*",
+    "@prmpt/dev": "workspace:*"
+  }
+}

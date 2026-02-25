@@ -84,7 +84,10 @@ Hello {{name}}, welcome to {{place}}!
         argsName,
       }]);
 
-      expect(index).toMatchInlineSnapshot(`undefined`);
+      expect(index).toMatchInlineSnapshot(`
+        "export * as test from "./test";
+        export { type TestArgs } from "./test";"
+      `);
     });
   });
 });

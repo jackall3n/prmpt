@@ -10,7 +10,6 @@
   },
   "scripts": {
     "build": "bun build.ts",
-    "test": "bun test",
     "lint": "tsc --noEmit",
     "dev": "echo 'Dev package - no dev server'",
     "release": "bun publish --allow-empty"

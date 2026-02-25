@@ -1,6 +1,6 @@
 {
   "name": "@tsprompt/cli",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "access": "public",
   "type": "module",
   "bin": {
@@ -18,7 +18,7 @@
     "dev": "echo 'CLI package - no dev server'",
     "release": "bun publish --allow-empty --access public"
   },
-  "dependencies": {
+  "devDependencies": {
     "@tsprompt/core": "workspace:*",
     "@tsprompt/dev": "workspace:*"
   }

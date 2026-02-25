@@ -1,5 +1,5 @@
 {
-  "name": "prmpt-monorepo",
+  "name": "root",
   "private": true,
   "workspaces": [
     "packages/*",
@@ -7,9 +7,11 @@
   ],
   "scripts": {
     "test": "bun test",
-    "lint": "bunx --bun tsc --noEmit"
+    "lint": "bunx --bun tsc --noEmit",
+    "version": "bumpp --recursive"
   },
   "devDependencies": {
+    "bumpp": "^10.4.1",
     "@biomejs/biome": "^2.4.4",
     "@types/bun": "latest",
     "prmpt": "workspace:*",
